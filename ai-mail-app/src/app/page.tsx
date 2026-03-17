@@ -367,6 +367,16 @@ export default function Home() {
     </p>
   </a>
 
+   <a
+  href="/business-email-examples"
+  className="rounded-md border border-ink/10 bg-white/60 p-4 hover:border-vermilion/40 transition"
+>
+  <h4 className="text-sm font-medium text-ink">ビジネスメール例文集</h4>
+  <p className="text-xs text-ink/40 mt-1">
+    謝罪・お礼・依頼などのメール作成ページをまとめて見る
+  </p>
+</a>
+
 </div>
 </div>
 
