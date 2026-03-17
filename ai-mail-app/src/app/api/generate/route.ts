@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import Anthropic from "@anthropic-ai/sdk";
+import OpenAI from "openai";
 
-const client = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
+const client = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 export async function POST(req: NextRequest) {
@@ -11,41 +11,54 @@ export async function POST(req: NextRequest) {
 
     if (!purpose || !recipient || !content) {
       return NextResponse.json(
-        { error: "用途・相手・内容は必須項目です。" },
+        { error: "必要な項目が不足しています。" },
         { status: 400 }
       );
     }
 
-    const prompt = `あなたは日本のビジネスマナーに精通したプロのビジネスライターです。
-以下の情報をもとに、丁寧で適切なビジネスメールを作成してください。
+    const prompt = `
+あなたは日本語のビジネスメール作成アシスタントです。
+以下の条件に沿って、自然で丁寧な日本語のビジネスメールを作成してください。
 
-【用途】${purpose}
-【相手】${recipient}
-【内容・要点】${content}
+【用途】
+${purpose}
 
-以下のルールに従ってメールを作成してください：
-- 件名から本文まで完全なメールとして出力すること
-- 敬語・謙譲語・丁寧語を適切に使い分けること
-- 簡潔かつ礼儀正しい文体にすること
-- 署名は「（署名）」というプレースホルダーで終わること
-- 余計な説明や前置きは一切不要。メール本文のみを出力すること`;
+【相手】
+${recipient}
 
-    const message = await client.messages.create({
-      model: "claude-opus-4-5",
-      max_tokens: 1024,
-      messages: [{ role: "user", content: prompt }],
+【内容】
+${content}
+
+要件:
+- 件名も含める
+- 丁寧で自然な日本語にする
+- そのまま送れる形に整える
+- 冗長すぎず簡潔にする
+`;
+
+    const response = await client.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [
+        {
+          role: "system",
+          content: "あなたは優秀な日本語ビジネスメール作成アシスタントです。",
+        },
+        {
+          role: "user",
+          content: prompt,
+        },
+      ],
+      temperature: 0.7,
     });
 
-    const textContent = message.content.find((c) => c.type === "text");
-    if (!textContent || textContent.type !== "text") {
-      throw new Error("メールの生成に失敗しました。");
-    }
+    const result = response.choices?.[0]?.message?.content ?? "";
 
-    return NextResponse.json({ email: textContent.text });
-  } catch (error: unknown) {
-    console.error("API error:", error);
-    const message =
-      error instanceof Error ? error.message : "予期しないエラーが発生しました。";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ result });
+  } catch (error) {
+    console.error("OpenAI API Error:", error);
+    return NextResponse.json(
+      { error: "メール生成中にエラーが発生しました。" },
+      { status: 500 }
+    );
   }
 }
