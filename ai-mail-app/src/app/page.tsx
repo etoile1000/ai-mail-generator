@@ -377,6 +377,16 @@ export default function Home() {
   </p>
 </a>
 
+   <a
+  href="/request-email"
+  className="rounded-md border border-ink/10 bg-white/60 p-4 hover:border-vermilion/40 transition"
+>
+  <h4 className="text-sm font-medium text-ink">AI依頼メール作成</h4>
+  <p className="text-xs text-ink/40 mt-1">
+    丁寧なお願い・依頼メールをAIが自動生成
+  </p>
+</a>
+
 </div>
 </div>
 
