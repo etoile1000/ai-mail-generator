@@ -339,8 +339,27 @@ export default function Home() {
           </div>
         )}
 
-        {/* Tips */}
-        <div className="mt-10 stagger-5 animate-slide-up">
+      {/* Related AI Email Tools */}
+<div className="mt-10">
+  <h3 className="font-display text-sm font-medium text-ink/50 mb-4 tracking-wider">
+    AIメール作成ツール
+  </h3>
+
+  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+    <a
+      href="/apology-email"
+      className="rounded-md border border-ink/10 bg-white/60 p-4 hover:border-vermilion/40 transition"
+    >
+      <h4 className="text-sm font-medium text-ink">AI謝罪メール作成</h4>
+      <p className="text-xs text-ink/40 mt-1">
+        取引先や顧客へのお詫びメールをAIが自動生成
+      </p>
+    </a>
+  </div>
+</div>
+
+{/* Tips */}
+<div className="mt-10 stagger-5 animate-slide-up">
           <hr className="brush-rule mb-8" />
           <h3 className="font-display text-sm font-medium text-ink/50 mb-4 tracking-wider">
             ご利用のヒント
