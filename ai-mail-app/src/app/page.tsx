@@ -381,7 +381,7 @@ export default function Home() {
         <div className="mx-auto max-w-3xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-xs text-ink/30 font-display">AIビジネスメール生成</p>
           <p className="text-xs text-ink/25">
-            Powered by Claude API · Anthropic
+            Powered by OpenAI
           </p>
         </div>
       </footer>
