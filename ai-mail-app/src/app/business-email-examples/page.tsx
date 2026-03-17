@@ -51,3 +51,36 @@ export default function BusinessEmailExamplesPage() {
     </main>
   );
 }
+
+<div className="mt-12">
+  <h2 className="text-xl font-medium text-ink mb-4">
+    ビジネスメールの書き方の基本
+  </h2>
+
+  <p className="text-sm text-ink/60 leading-relaxed mb-4">
+    ビジネスメールは「結論→理由→詳細」の順で書くのが基本です。
+    相手にとって読みやすく、誤解のない文章を意識することが重要です。
+  </p>
+
+  <h3 className="text-base font-medium text-ink mb-2">
+    1. 件名は具体的に書く
+  </h3>
+  <p className="text-sm text-ink/60 mb-4">
+    件名は内容が一目で分かるように簡潔に書きます。
+    例：「納期遅延のお詫び」「打ち合わせ日程のご相談」
+  </p>
+
+  <h3 className="text-base font-medium text-ink mb-2">
+    2. 冒頭で結論を伝える
+  </h3>
+  <p className="text-sm text-ink/60 mb-4">
+    忙しい相手に配慮し、最初に要件を伝えます。
+  </p>
+
+  <h3 className="text-base font-medium text-ink mb-2">
+    3. 丁寧な言葉を使う
+  </h3>
+  <p className="text-sm text-ink/60">
+    敬語やクッション言葉を使うことで、印象の良いメールになります。
+  </p>
+</div>
