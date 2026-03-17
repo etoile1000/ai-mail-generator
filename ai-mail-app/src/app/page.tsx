@@ -345,17 +345,29 @@ export default function Home() {
     AIメール作成ツール
   </h3>
 
-  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-    <a
-      href="/apology-email"
-      className="rounded-md border border-ink/10 bg-white/60 p-4 hover:border-vermilion/40 transition"
-    >
-      <h4 className="text-sm font-medium text-ink">AI謝罪メール作成</h4>
-      <p className="text-xs text-ink/40 mt-1">
-        取引先や顧客へのお詫びメールをAIが自動生成
-      </p>
-    </a>
-  </div>
+ <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+
+  <a
+    href="/apology-email"
+    className="rounded-md border border-ink/10 bg-white/60 p-4 hover:border-vermilion/40 transition"
+  >
+    <h4 className="text-sm font-medium text-ink">AI謝罪メール作成</h4>
+    <p className="text-xs text-ink/40 mt-1">
+      取引先や顧客へのお詫びメールをAIが自動生成
+    </p>
+  </a>
+
+  <a
+    href="/thank-you-email"
+    className="rounded-md border border-ink/10 bg-white/60 p-4 hover:border-vermilion/40 transition"
+  >
+    <h4 className="text-sm font-medium text-ink">AIお礼メール作成</h4>
+    <p className="text-xs text-ink/40 mt-1">
+      感謝やお礼を伝えるビジネスメールをAIが自動生成
+    </p>
+  </a>
+
+</div>
 </div>
 
 {/* Tips */}
