@@ -318,23 +318,46 @@ export default function Home() {
                 </pre>
               </div>
               {/* Bottom regenerate */}
-              <div className="border-t border-ink/8 px-6 py-4">
-                <button
-                  onClick={handleGenerate}
-                  className="text-xs text-ink/40 hover:text-vermilion transition-colors flex items-center gap-1.5"
-                >
-                  <svg viewBox="0 0 20 20" fill="none" className="h-3.5 w-3.5">
-                    <path
-                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  再生成する
-                </button>
-              </div>
+            <div className="p-6">
+  <pre className="whitespace-pre-wrap font-sans text-sm leading-[1.9] text-ink">
+    {generatedEmail}
+  </pre>
+</div>
+
+{/* Bottom regenerate */}
+<div className="border-t border-ink/8 px-6 py-4">
+  <button
+    onClick={handleGenerate}
+    className="text-xs text-ink/40 hover:text-vermilion transition-colors flex items-center gap-1.5"
+  >
+    <svg viewBox="0 0 20 20" fill="none" className="h-3.5 w-3.5">
+      <path
+        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+    再生成する
+  </button>
+</div>
+
+{/* CTA */}
+<div className="border-t border-ink/8 px-6 py-5 text-center">
+  <p className="text-sm text-ink/60 mb-3">
+    より高度な文章作成や細かい調整をしたい方へ
+  </p>
+
+  <a
+    href="https://chat.openai.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block rounded-md bg-vermilion px-4 py-2 text-sm text-white hover:opacity-90 transition"
+  >
+    ChatGPTでさらに精度高く作成する →
+  </a>
+</div>
             </div>
           </div>
         )}
@@ -374,16 +397,6 @@ export default function Home() {
   <h4 className="text-sm font-medium text-ink">ビジネスメール例文集</h4>
   <p className="text-xs text-ink/40 mt-1">
     謝罪・お礼・依頼などのメール作成ページをまとめて見る
-  </p>
-</a>
-
-   <a
-  href="/request-email"
-  className="rounded-md border border-ink/10 bg-white/60 p-4 hover:border-vermilion/40 transition"
->
-  <h4 className="text-sm font-medium text-ink">AI依頼メール作成</h4>
-  <p className="text-xs text-ink/40 mt-1">
-    丁寧なお願い・依頼メールをAIが自動生成
   </p>
 </a>
 
