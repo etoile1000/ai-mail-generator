@@ -387,6 +387,36 @@ export default function Home() {
   </p>
 </a>
 
+   <a
+  href="/request-email"
+  className="rounded-md border border-ink/10 bg-white/60 p-4 hover:border-vermilion/40 transition"
+>
+  <h4 className="text-sm font-medium text-ink">AI依頼メール作成</h4>
+  <p className="text-xs text-ink/40 mt-1">
+    丁寧なお願い・依頼メールをAIが自動生成
+  </p>
+</a>
+
+<a
+  href="/follow-up-email"
+  className="rounded-md border border-ink/10 bg-white/60 p-4 hover:border-vermilion/40 transition"
+>
+  <h4 className="text-sm font-medium text-ink">AIフォローメール作成</h4>
+  <p className="text-xs text-ink/40 mt-1">
+    返信催促や確認のフォローメールをAIが自動生成
+  </p>
+</a>
+
+<a
+  href="/sales-email"
+  className="rounded-md border border-ink/10 bg-white/60 p-4 hover:border-vermilion/40 transition"
+>
+  <h4 className="text-sm font-medium text-ink">AI営業メール作成</h4>
+  <p className="text-xs text-ink/40 mt-1">
+    提案や営業向けのビジネスメールをAIが自動生成
+  </p>
+</a>
+
 </div>
 </div>
 
